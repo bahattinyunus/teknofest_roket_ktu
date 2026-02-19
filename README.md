@@ -2,7 +2,7 @@
 
 <div align="center">
   <br><br>
-  <img src="assets/teknofest_logo.png" alt="Teknofest Logo" width="80" />
+
 
   # 📋 Teknofest 2026 Roket Projesi - Planlama ve Arşiv
   ### Kişisel Teknofest Roket Projesi
