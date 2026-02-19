@@ -1,13 +1,12 @@
 ﻿﻿
 
 <div align="center">
-  <img src="assets/project_banner.png" alt="Gökçen Roket Takımı Banner" width="100%" />
+  <img src="assets/project_banner.png" alt="Roket Projesi Banner" width="100%" />
   <br><br>
-  <img src="assets/university_logo.png" alt="University Logo" width="80" />
   <img src="assets/teknofest_logo.png" alt="Teknofest Logo" width="80" />
 
-  # 📋 Teknofest 2026 Roket Takımı - Planlama ve Arşiv
-  ### Karadeniz Teknik Üniversitesi - Gökçen Roket Takımı
+  # 📋 Teknofest 2026 Roket Projesi - Planlama ve Arşiv
+  ### Kişisel Teknofest Roket Projesi
 
   [![](https://img.shields.io/badge/Teknofest-2026-red?style=for-the-badge&logo=rocket)](https://teknofest.org/tr/)
   [![](https://img.shields.io/github/actions/workflow/status/bahattinyunus/teknofest-rocket-2026/lint.yml?style=for-the-badge&label=Build&logo=github)](https://github.com/bahattinyunus/teknofest-rocket-2026/actions)
@@ -41,7 +40,7 @@
 ---
 
 > [!IMPORTANT]
-> **📢 Takım Duyurusu ve Görevlendirme**
+> **📢 Proje Duyurusu ve Görevlendirme**
 >
 > 1.  **Erişim:** Repo üzerinde çalışmak isteyenler kullanıcı adlarını ileterek "Collaborator" olabilir veya doğrudan PR (Pull Request) açabilirler.
 > 2.  **Rapor Analizi:** `geçmis_raporlar` klasöründe dosyalar "1. kişi", "2. kişi" şeklinde gruplandırılmıştır.
@@ -67,8 +66,8 @@
 ---
 
 ## 📌 Depo Amacı
-Bu repository, **KTÜ Gökçen Roket Takımı**'nın 2026 Teknofest Yarışması sürecindeki **tasarım, analiz, raporlama ve yönetim** belgelerini barındırır.
-Burası takımın **hafızasıdır**. Her teknik karar, her analiz sonucu ve her önemli belge burada saklanır.
+Bu repository, **2026 Teknofest Yarışması** sürecindeki **tasarım, analiz, raporlama ve yönetim** belgelerini barındıran kişisel proje deposudur.
+Burası projenin **hafızasıdır**. Her teknik karar, her analiz sonucu ve her önemli belge burada saklanır.
 
 ---
 
@@ -77,9 +76,9 @@ Burası takımın **hafızasıdır**. Her teknik karar, her analiz sonucu ve her
 **T3 Vakfı** ve **Roketsan** öncülüğünde düzenlenen bu yarışma, öğrencilerin uzay teknolojileri alanında yetkinlik kazanmasını hedefler.
 
 ### 🏆 Kategoriler
-Takımımız **Yüksek İrtifa (High Altitude)** kategorisinde yarışmaktadır.
+Bu proje **Yüksek İrtifa (High Altitude)** kategorisinde yarışmayı hedeflemektedir.
 *   **Orta İrtifa:** 5.000 feet (yaklaşık 1.500m) hedef irtifa.
-*   **Yüksek İrtifa:** 10.000 feet (yaklaşık 3.000m) hedef irtifa - *Bizim Hedefimiz*
+*   **Yüksek İrtifa:** 10.000 feet (yaklaşık 3.000m) hedef irtifa - *Hedefimiz*
 *   **Zorlu Görev:** 10.000 feet + Değişken Faydalı Yük görevi.
 
 ### 📝 Değerlendirme Süreci
@@ -111,12 +110,6 @@ Tüm teknik ve idari belgeler standartlara uygun olarak düzenlenmiştir:
 ```plaintext
 ├── 📂 assets              # Görseller, bannerlar ve logolar
 ├── 📂 docs                # 🧠 Tüm teknik dokümanlar
-│   ├── 📂 education       # 🎓 Eğitim materyalleri (Rocketry 101)
-│   ├── 📂 internal        # 🧮 İç hesaplamalar ve notlar
-│   ├── 📂 operations      # 📋 Operasyonel kontrol listeleri (Checklists)
-│   ├── 📂 management      # 📅 Bütçe, takvim ve toplantı notları
-│   ├── 📂 templates       # 📄 Rapor şablonları (ÖTR, KTR)
-│   └── 📂 subsystems      # 🛠️ Alt sistem tasarımları
 ├── 📂 geçmis_raporlar     # 📚 Analiz edilen eski raporlar
 ├── 📂 logs                # 📡 Telemetri ve uçuş logları
 ├── 📜 CITATION.cff        # Akademik atıf dosyası
@@ -143,18 +136,17 @@ Tüm teknik ve idari belgeler standartlara uygun olarak düzenlenmiştir:
 
 ---
 
-## 🤝 Takım İçi Kurallar
-1.  **Toplantı Disiplini:** Her Pazar 20:00'de haftalık toplantı yapılır.
+## 🤝 Çalışma Prensipleri
+1.  **Disiplin:** Planlı ve programlı ilerleme esastır.
 2.  **Belgeleme:** Yapılan her hesaplama ve araştırma `docs/` altına işlenir.
-3.  **İletişim:** WhatsApp grubu ve bu depo üzerindeki "Issues" sekmesi kullanılır.
+3.  **İletişim:** GitHub Issues üzerinden süreç takibi yapılır.
 
 ---
 
 ## 📞 İletişim
 
-*   **Takım Kaptanı:** [İsim Soyisim] (email@ktu.edu.tr)
-*   **Akademik Danışman:** [Ünvan İsim Soyisim]
+*   **Proje Sahibi:** Bahattin Yunus
 
 <div align="center">
-  <p>© 2026 KTÜ Gökçen Roket Takımı</p>
+  <p>© 2026 Bahattin Yunus</p>
 </div>
