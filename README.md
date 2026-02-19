@@ -1,7 +1,6 @@
 ﻿﻿
 
 <div align="center">
-  <img src="assets/project_banner.png" alt="Roket Projesi Banner" width="100%" />
   <br><br>
   <img src="assets/teknofest_logo.png" alt="Teknofest Logo" width="80" />
 
