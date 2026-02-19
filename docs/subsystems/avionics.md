@@ -1,70 +1,92 @@
-# ⚡ Aviyonik Alt Sistemi
+# ⚡ Aviyonik ve Gömülü Sistemler (Avionics & Embedded Systems)
 
-## 🎯 Hedefler
-- Ana Bilgisayar ve Yedek Bilgisayar mimarisi.
-- Çift yönlü haberleşme (433 MHz LoRa) - 20km menzil hedefi.
-- SD Kart Loglama (50 Hz).
-- Sensör Füzyonu ve Durum Kestirimi (Kalman Filtresi).
+<div align="center">
 
-## 💻 Yazılım Mimarisi (Software Architecture)
-Roket uçuş yazılımı **Sonlu Durum Makinesi (Finite State Machine - FSM)** modeline dayanır. Bu model, roketin o anki durumuna göre farklı görevleri yerine getirmesini sağlar.
+  ![STM32](https://img.shields.io/badge/STM32-ARM_Cortex_M4-blue?style=for-the-badge&logo=stmicroelectronics)
+  ![KiCad](https://img.shields.io/badge/KiCad-PCB_Design-green?style=for-the-badge&logo=kicad)
+  ![C++](https://img.shields.io/badge/C++-Embedded_Software-00599C?style=for-the-badge&logo=c%2B%2B)
 
-### Uçuş Durumları (Flight States)
-1.  **IDLE (Bekleme):** Rampada bekleme, sensör kalibrasyonu.
-2.  **ARMED (Hazır):** Güvenlik pimi çekildi, fırlatma komutu bekleniyor.
-3.  **AGSOL (Ateşleme):** İvme algılandı (>3g), motor yanıyor.
-4.  **COAST (Süzülme):** Motor sustu, kinetik enerji ile yükselme.
-5.  **APOGEE (Tepe Noktası):** Hız ~0, irtifa maksimum. **1. Ayrılma (Sürüklenme Paraşütü).**
-6.  **MAIN_DESCENT (Ana İniş):** 600m irtifada **2. Ayrılma (Ana Paraşüt).**
-7.  **LANDED (İniş):** Hareket durdu, konum verisi gönderiliyor.
+</div>
 
-### Algoritmalar
-#### Sensör Füzyonu (Kalman Filtresi)
-Yüksek titreşimli ortamda doğru irtifa ve hız verisi elde etmek için **Barometre** ve **İvmeölçer (IMU)** verileri birleştirilir.
-*   **Barometre:** Uzun vadede doğru irtifa verir, ancak anlık değişimlerde gürültülüdür.
-*   **İvmeölçer:** Anlık değişimleri çok hızlı yakalar, ancak integrasyon hatası (drift) birikir.
-*   **Çözüm:** *Complementary Filter* veya *Extended Kalman Filter (EKF)* ile iki sensörün güçlü yönleri birleştirilir.
-
-## ⚡ Güç Bütçesi
-| Bileşen | Voltaj (V) | Akım (mA) | Güç (W) |
-| :--- | :--- | :--- | :--- |
-| STM32F4 | 3.3 | 100 | 0.33 |
-| LoRa Modülü | 3.3 | 120 (Tx) | 0.40 |
-| Sensörler | 3.3 | 50 | 0.16 |
-| GPS Modülü | 3.3 | 60 | 0.20 |
-| **TOPLAM** | | **330 mA** | **1.09 W** |
-
-## 📦 Malzeme Listesi (BOM)
-- **Ana İşlemci:** STM32F407VG Discovery veya Black Pill
-- **İletişim:** Ebyte E32 433T20D LoRa (Uzun menzil için)
-- **Barometre:** BMP388 veya MS5611 (Yüksek hassasiyet)
-- **IMU:** BNO055 veya MPU6050
-- **GPS:** u-blox NEO-M8N
+## 🎯 Sistem Özeti
+Bu modül, roketin "beyni" olarak işlev görür. Uçuş verilerini toplar, analiz eder ve kritik kararları (paraşüt açma vb.) milisaniyeler içinde verir.
+**Ana Hedef:** Çift yedekli (Redundant) sistem mimarisi ile %99.9 güvenilirlik sağlamak.
 
 ---
 
-## ⚡ Bağlantı Şeması (Wiring Diagram)
+## 💻 Donanım Mimarisi (Hardware Architecture)
+
+Uçuş bilgisayarımız, yüksek performanslı **STM32F4** serisi mikrodenetleyiciler üzerine kuruludur.
+
+### 🧩 Bileşen Seçimi (Component Selection)
+
+| Bileşen | Model | Açıklama | Neden Seçildi? |
+| :--- | :--- | :--- | :--- |
+| **Ana İşlemci (MCU)** | **STM32F407VGT6** | 168 MHz, Cortex-M4F | Yüksek işlem gücü, FPU (Kayan Nokta Birimi) desteği ve zengin çevre birimleri. |
+| **IMU (İvme/Jiroskop)** | **BNO055** | 9-Eksenli Mutlak Yönelim | Dahili sensör füzyonu işlemcisi ile CPU yükünü azaltır. |
+| **Barometre (Altimetre)** | **MS5611** | 24-bit ADC, I2C | 10cm hassasiyet ile dikey hız ve irtifa ölçümü için endüstri standardı. |
+| **GPS (Konum)** | **u-blox NEO-M8N** | GNSS, UART | Yüksek güncelleme hızı (10Hz) ve hassas konumlandırma. |
+| **Telemetri (LoRa)** | **Ebyte E32-433T30D** | 433 MHz, 1W | 8km+ menzil, yüksek parazit direnci ve güvenilir veri aktarımı. |
+| **Veri Kaydı (Storage)** | **MicroSD Kart** | SPI Arayüzü | 50Hz hızında uçuş verisi, sensör ham verisi ve durum loglarını kaydeder. |
+
+---
+
+## 📡 Yazılım Mimarisi (Software Architecture)
+
+Yazılım, **Real-Time Operating System (FreeRTOS)** veya **Bare-Metal Scheduler** üzerinde koşan olay tabanlı bir yapıdadır.
+
+### 🔄 Uçuş Durum Makinesi (Finite State Machine)
+Roket, sensör verilerine dayanarak aşağıdaki durumlar arasında geçiş yapar:
 
 ```mermaid
-graph TD
-    Bat[Lipo Pil 2S/3S] -->|Voltaj Regülatörü| PDB[Güç Dağıtım Kartı]
-    PDB -->|3.3V| MCU[STM32F4 Ana İşlemci]
-    
-    subgraph SENSÖRLER
-        BMP[BMP388 Barometre] -->|I2C| MCU
-        IMU[BNO055 IMU] -->|I2C/UART| MCU
-        GPS[NEO-M8N GPS] -->|UART| MCU
-    end
-    
-    subgraph İLETİŞİM
-        MCU -->|UART/SPI| LoRa[Ebyte E32 LoRa]
-        LoRa -.->|433 MHz| Yer[Yer İstasyonu]
-    end
-    
-    subgraph KURTARMA
-        MCU -->|GPIO| Mosfet1[Ana Paraşüt Mosfet]
-        MCU -->|GPIO| Mosfet2[Sürüklenme Mosfet]
-        Mosfet1 -->|12V| EMatch1[Ateşleyici 1]
-        Mosfet2 -->|12V| EMatch2[Ateşleyici 2]
-    end
+stateDiagram-v2
+    [*] --> IDLE: Başlangıç & Kalibrasyon
+    IDLE --> ARMED: Güvenlik Pimi Çekildi
+    ARMED --> ASCENT: İvme > 3g (Motor Ateşleme)
+    ASCENT --> COAST: İvme < 0 (Motor Sönüm)
+    COAST --> APOGEE: Hız ~ 0 (Tepe Noktası)
+    APOGEE --> DESCENT_DROGUE: 1. Ayrılma Gerçekleşti
+    DESCENT_DROGUE --> DESCENT_MAIN: İrtifa < 600m (2. Ayrılma)
+    DESCENT_MAIN --> LANDED: Hız & İrtifa Sabit
+    LANDED --> [*]: Kurtarma Sinyali & Buzzer
 ```
+
+### 🧠 Algoritmalar
+
+#### 1. Sensör Füzyonu (Extended Kalman Filter - EKF)
+Ham sensör verileri gürültülüdür. **Kalman Filtresi**, Barometre ve İvmeölçer verilerini birleştirerek roketin gerçek durumunu (konum, hız, yönelim) mümkün olan en yüksek doğrulukla tahmin eder.
+*   **Barometre:** Uzun vadeli irtifa doğruluğu sağlar (Drift yok).
+*   **İvmeölçer:** Hızlı hareketleri yakalar (Gürültü az).
+
+#### 2. Apogee Tespiti (Tepe Noktası)
+Sadece barometre verisine güvenmek yerine, hız vektörünün yön değiştirdiği (pozitiften negatife döndüğü) an, Kalman Filtresi çıkışı ile tespit edilir. Bu, erken veya geç ateşlemeyi önler.
+
+---
+
+## ⚡ Güç Yönetimi ve Şema
+
+Sistem, 2 adet LiPo pil ile beslenir:
+1.  **Lojik Güç (2S 7.4V):** Regüle edilerek işlemci ve sensörleri besler.
+2.  **Piroteknik Güç (3S 11.1V):** Doğrudan MOSFET'ler üzerinden barut ateşleyicileri (E-Match) besler.
+
+### 🔌 Pinout Tablosu
+
+| STM32 Pin | Fonksiyon | Bağlantı |
+| :--- | :--- | :--- |
+| **PA9/PA10** | UART1 TX/RX | Telemetri Modülü |
+| **PB6/PB7** | I2C1 SCL/SDA | IMU & Barometre |
+| **PA2/PA3** | UART2 TX/RX | GPS Modülü |
+| **PC10/PC11** | SPI3 SCK/MOSI | SD Kart Modülü |
+| **PD12** | GPIO Output | Buzzer |
+| **PE9** | ADC Input | Batarya Voltaj İzleme |
+| **PE13** | GPIO Output | Drogue Paraşüt MOSFET |
+| **PE14** | GPIO Output | Main Paraşüt MOSFET |
+
+---
+
+## 🚨 Güvenlik Önlemleri (Failsafes)
+
+1.  **Watchdog Timer:** Yazılım kilitlenirse sistemi otomatik yeniden başlatır.
+2.  **Brown-out Reset:** Voltaj kritik seviyenin altına düşerse işlemciyi güvenli moda alır.
+3.  **Mechanical Arming:** Fiziksel bir güvenlik anahtarı (Remove Before Flight) olmadan piroteknik kanallara asla enerji gitmez.
+4.  **CRC Check:** Telemetri verileri CRC-16 ile doğrulanır, bozuk paketler reddedilir.
