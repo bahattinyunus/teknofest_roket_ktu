@@ -1,151 +1,106 @@
-﻿﻿
+﻿﻿# 🚀 Teknofest 2026 Yüksek İrtifa Roket Projesi
 
 <div align="center">
-  <br><br>
 
-
-  # 📋 Teknofest 2026 Roket Projesi - Planlama ve Arşiv
-  ### Kişisel Teknofest Roket Projesi
-
-  [![](https://img.shields.io/badge/Teknofest-2026-red?style=for-the-badge&logo=rocket)](https://teknofest.org/tr/)
-  [![](https://img.shields.io/github/actions/workflow/status/bahattinyunus/teknofest-rocket-2026/lint.yml?style=for-the-badge&label=Build&logo=github)](https://github.com/bahattinyunus/teknofest-rocket-2026/actions)
-  [![](https://img.shields.io/badge/Durum-Aktif%20Geliştirme-blue?style=for-the-badge)](https://teknofest.org/tr/)
-  [![](https://img.shields.io/badge/Lisans-MIT-green?style=for-the-badge)](LICENSE)
+  ![Rocket Launch Banner](https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=1600&auto=format&fit=crop)
 
   <br>
 
-  **"Göklerdeki istikbalimiz için planlı, disiplinli ve bilimsel çalışma."**
+  [![Teknofest](https://img.shields.io/badge/Teknofest-2026-red?style=for-the-badge&logo=rocket)](https://teknofest.org/tr/)
+  [![Build Status](https://img.shields.io/github/actions/workflow/status/bahattinyunus/teknofest-rocket-2026/lint.yml?style=for-the-badge&label=Build&logo=github)](https://github.com/bahattinyunus/teknofest-rocket-2026/actions)
+  [![License](https://img.shields.io/badge/Lisans-MIT-green?style=for-the-badge)](LICENSE)
+  [![Status](https://img.shields.io/badge/Durum-Aktif%20Geliştirme-blue?style=for-the-badge)](https://teknofest.org/tr/)
+  [![Repo Size](https://img.shields.io/github/repo-size/bahattinyunus/teknofest-rocket-2026?style=for-the-badge&color=orange)](https://github.com/bahattinyunus/teknofest-rocket-2026)
+
+  <br>
+
+  ### *"Göklerdeki istikbalimiz için planlı, disiplinli ve bilimsel çalışma."*
+  
+  **Bahattin Yunus** | *Kişisel Portföy Projesi*
 
 </div>
 
 ---
 
-## 📚 Yararlı Kaynaklar (Resources)
+## 🌌 Vizyon ve Amaç (Mission Statement)
 
-| 🇹🇷 Yerli Örnekler | 🌍 Yabancı Kaynaklar |
-| :--- | :--- |
-| • [Atalay Roket](https://github.com/atalayroket)<br>• [Teknofest Yer İstasyonu](https://github.com/koesan/Teknofest_roket_Yer_istasyonu_yazilimi.git)<br>• [Teknofest Flight Software](https://github.com/denizetkar/TeknofestFlightSoftware)<br>• [Yer İstasyonu (Yunus Emre Tom)](https://github.com/yunusemretom/Yer-Istasyonu)<br>• [Atalay Aviyonik](https://github.com/atalayroket/atalay_aviyoniksistem) | • [Rocket Control](https://github.com/intensite/rocketcontrol)<br>• [NASA cFS](https://github.com/nasa/cFS)<br>• [ArduPilot](https://github.com/ArduPilot/ardupilot)<br>• [OpenRocket](https://github.com/openrocket/openrocket)<br>• [Mission Planner](https://github.com/ArduPilot/MissionPlanner)<br>• [PX4 Autopilot](https://github.com/PX4/PX4-Autopilot) |
+Bu proje, sadece bir roket tasarlamak değil; **havacılık ve uzay mühendisliği** disiplinlerinin sınırlarını zorlayan, yüksek teknolojili ve özgün bir sistem geliştirmektir. 
+**10.000 feet (3.000m)** irtifaya ulaşmayı ve güvenli bir şekilde yere inmeyi hedefleyen bu roket, kişisel mühendislik yetkinliklerimin ve tutkumun bir nişanesidir.
 
-### 🧠 Önerilen İleri Seviye Kaynaklar (Recommended by AI)
-
-| 🔬 Simülasyon & Analiz | ⚡ Aviyonik & Gömülü Sistemler | 📚 Eğitim & Teori |
-| :--- | :--- | :--- |
-| • **[NASA OpenMCT](https://github.com/nasa/openmct)**<br>_(Görev kontrol arayüzü)_<br>• **[RocketPy](https://github.com/RocketPy-Team/RocketPy)**<br>_(6-DOF yörünge simülasyonu)_<br>• **[RASAero II](http://www.rasaero.com/)**<br>_(Aerodinamik analiz)_<br>• **[OpenRocket](https://openrocket.info/)**<br>_(Standart simülasyon)_ | • **[KiCad](https://www.kicad.org/)**<br>_(PCB Tasarım)_<br>• **[Teensy Rocket](https://github.com/PaulStoffregen/Teensy)**<br>_(Hızlı uçuş bilgisayarları)_<br>• **[ExpressLRS](https://github.com/ExpressLRS/ExpressLRS)**<br>_(Uzun menzil RC)_<br>• **[ArduPilot](https://ardupilot.org/)**<br>_(Otopilot ekosistemi)_ | • **[Nakka Rocketry](https://www.nakka-rocketry.net/)**<br>_(Motor teorisi)_<br>• **[BPS Space](https://www.youtube.com/c/BPSSpace)**<br>_(TVC ve kontrol)_<br>• **[Apogee Rockets](https://www.apogeerockets.com/Education/Newsletter-Archive)**<br>_(Teknik makaleler)_<br>• **[NASA Basics of Space Flight](https://solarsystem.nasa.gov/basics/chapter1-1/)** |
-
-| 📏 Standartlar & El Kitapları | 🧮 Araçlar & Veritabanları | 🛠️ Mekanik & Üretim |
-| :--- | :--- | :--- |
-| • **[NASA Systems Engineering Handbook](https://www.nasa.gov/seh/)**<br>_(Sistem mühendisliği)_<br>• **[ECSS Standards](https://ecss.nl/)**<br>_(Avrupa Uzay Standartları)_<br>• **[FAA Amateur Rocketry](https://www.faa.gov/space/legislation_regulation_guidance)**<br>_(Güvenlik regülasyonları)_ | • **[ThrustCurve.org](https://www.thrustcurve.org/)**<br>_(Motor itki verileri)_<br>• **[Fruity Chutes Calculator](https://fruitychutes.com/help_guide/descent_rate_calculator.htm)**<br>_(Paraşüt/İniş hızı hesabı)_<br>• **[BurnSim](http://www.burnsim.com/)**<br>_(İç balistik tasarımı)_ | • **[Make It From](https://www.makeitfrom.com/)**<br>_(Malzeme özellikleri veritabanı)_<br>• **[NASA Spinoffs](https://spinoff.nasa.gov/)**<br>_(Teknoloji transferi örnekleri)_<br>• **[GrabCAD Rocketry](https://grabcad.com/library?page=1&time=all_time&sort=popular&query=rocketry)**<br>_(3D Model referansları)_ |
+> **Hedef:** Yüksek irtifa, kusursuz aviyonik sistemler ve özgün mekanik tasarım.
 
 ---
 
-> [!IMPORTANT]
-> **📢 Proje Duyurusu ve Görevlendirme**
->
-> 1.  **Erişim:** Repo üzerinde çalışmak isteyenler kullanıcı adlarını ileterek "Collaborator" olabilir veya doğrudan PR (Pull Request) açabilirler.
-> 2.  **Rapor Analizi:** `geçmis_raporlar` klasöründe dosyalar "1. kişi", "2. kişi" şeklinde gruplandırılmıştır.
->     *   **Görev:** Bir klasör seçin ve adını **kendi adınızla (Ad_Soyad)** değiştirin.
->     *   İçindeki 3 raporu inceleyip önemli noktaları ve analizlerinizi not alın.
->     *   Herkese kolay gelsin! 🚀
+## 🛠️ Teknoloji Yığını (Tech Stack)
 
----
+Projede kullanılan araçlar ve teknolojiler, endüstri standartlarına uygun olarak seçilmiştir.
 
-## 🛠️ Kullanılan Teknolojiler ve Araçlar
 <div align="center">
 
-![OpenRocket](https://img.shields.io/badge/OpenRocket-Design-blue?style=for-the-badge&logo=rocket)
-![Ansys](https://img.shields.io/badge/Ansys-CFD-yellow?style=for-the-badge&logo=ansys)
-![SolidWorks](https://img.shields.io/badge/SolidWorks-CAD-red?style=for-the-badge&logo=dassaultsystèmes)
-![STM32](https://img.shields.io/badge/STM32-Avionics-green?style=for-the-badge&logo=stmicroelectronics)
-![Python](https://img.shields.io/badge/Python-Scripting-blue?style=for-the-badge&logo=python)
-![Excel](https://img.shields.io/badge/Excel-Data-success?style=for-the-badge&logo=microsoft-excel)
-![GitHub](https://img.shields.io/badge/GitHub-Collaboration-181717?style=for-the-badge&logo=github)
+| Bölüm | Araçlar & Teknolojiler |
+| :--- | :--- |
+| **🚀 Tasarım & Simülasyon** | ![OpenRocket](https://img.shields.io/badge/OpenRocket-150458?style=flat-square&logo=rocket&logoColor=white) ![SolidWorks](https://img.shields.io/badge/SolidWorks-D24939?style=flat-square&logo=dassaultsystèmes&logoColor=white) ![Ansys](https://img.shields.io/badge/Ansys-FFB71B?style=flat-square&logo=ansys&logoColor=black) |
+| **⚡ Aviyonik & Gömülü** | ![STM32](https://img.shields.io/badge/STM32-03234B?style=flat-square&logo=stmicroelectronics&logoColor=white) ![KiCad](https://img.shields.io/badge/KiCad-314548?style=flat-square&logo=kicad&logoColor=white) ![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) |
+| **💻 Yazılım & Analiz** | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![MATLAB](https://img.shields.io/badge/MATLAB-e16737?style=flat-square&logo=mathworks&logoColor=white) ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white) |
+| **📊 Yönetim & Dokümantasyon** | ![Notion](https://img.shields.io/badge/Notion-000000?style=flat-square&logo=notion&logoColor=white) ![LaTeX](https://img.shields.io/badge/LaTeX-47A4A5?style=flat-square&logo=latex&logoColor=white) ![Markdown](https://img.shields.io/badge/Markdown-000000?style=flat-square&logo=markdown&logoColor=white) |
 
 </div>
 
 ---
 
-## 📌 Depo Amacı
-Bu repository, **2026 Teknofest Yarışması** sürecindeki **tasarım, analiz, raporlama ve yönetim** belgelerini barındıran kişisel proje deposudur.
-Burası projenin **hafızasıdır**. Her teknik karar, her analiz sonucu ve her önemli belge burada saklanır.
+## 🗺️ Yol Haritası ve Süreç (Timeline)
 
----
-
-## 🚀 Yarışma Hakkında (Teknofest Roket Kategorisi)
-
-**T3 Vakfı** ve **Roketsan** öncülüğünde düzenlenen bu yarışma, öğrencilerin uzay teknolojileri alanında yetkinlik kazanmasını hedefler.
-
-### 🏆 Kategoriler
-Bu proje **Yüksek İrtifa (High Altitude)** kategorisinde yarışmayı hedeflemektedir.
-*   **Orta İrtifa:** 5.000 feet (yaklaşık 1.500m) hedef irtifa.
-*   **Yüksek İrtifa:** 10.000 feet (yaklaşık 3.000m) hedef irtifa - *Hedefimiz*
-*   **Zorlu Görev:** 10.000 feet + Değişken Faydalı Yük görevi.
-
-### 📝 Değerlendirme Süreci
-Yarışma süreci 4 temel rapordan oluşur. Her aşama elemeli sistemdir:
+2026 Teknofest finaline giden yolda kritik kilometre taşları:
 
 ```mermaid
-timeline
-    title Teknofest 2026 Süreci
-    2026 Ocak : Takım Kurulumu : Literatür Taraması
-    2026 Şubat : KTR (Kavramsal Tasarım) : Ön Analizler
-    2026 Nisan : ÖTR (Ön Tasarım) : Detaylı CAD : CFD Analizleri
-    2026 Haziran : KTR (Kritik Tasarım) : İmalat Planı : Uçuş Simülasyonu
-    2026 Ağustos : AHR (Atış Hazırlık) : Montaj & Entegrasyon (AIT)
-    2026 Eylül : TEKNOFEST FİNAL 🚀
+gantt
+    title Proje Geliştirme Süreci
+    dateFormat  YYYY-MM-DD
+    section Planlama
+    Takım Kurulumu & Literatür :done,    des1, 2026-01-01, 2026-01-31
+    Kavramsal Tasarım (KTR)    :active,  des2, 2026-02-01, 2026-02-28
+    section Tasarım & Analiz
+    Ön Tasarım (ÖTR)           :         des3, 2026-03-01, 2026-04-15
+    CFD & Yapısal Analizler    :         des4, 2026-04-16, 2026-05-15
+    section Üretim & Test
+    Kritik Tasarım (KTR)       :         des5, 2026-05-16, 2026-06-15
+    Üretim ve Montaj           :         des6, 2026-06-16, 2026-07-31
+    Yer Testleri & AIT         :         des7, 2026-08-01, 2026-08-20
+    section Final
+    TEKNOFEST FİNAL 🚀         :crit,    des8, 2026-09-01, 2026-09-10
 ```
 
-### 🎯 Puanlama Kriterleri
-*   **Raporlar:** %40 (Mühendislik hesapları ve dokümantasyon kalitesi).
-*   **Atış ve Kurtarma:** %40 (Roketin sağlıklı şekilde tepe noktasına ulaşması ve paraşütlerin açılması).
-*   **Faydalı Yük:** %10 (Görevin başarıyla icra edilmesi).
-*   **Özgünlük:** %10 (Yerli tasarım ve inovatif çözümler).
+---
+
+## 📚 Kaynaklar ve Arşiv (Knowledge Base)
+
+Bu depo, projenin **hafızasıdır**. Aşağıdaki bağlantılardan detaylı teknik dokümanlara ulaşabilirsiniz.
+
+*   📂 **[Teknik Dokümantasyon](docs/)**
+    *   [🔥 İtki Sistemi (Propulsion)](docs/subsystems/propulsion.md)
+    *   [⚡ Aviyonik & Yazılım](docs/subsystems/avionics.md)
+    *   [🏗️ Yapısal & Mekanik](docs/subsystems/structure.md)
+    *   [🪂 Kurtarma Sistemi (Recovery)](docs/subsystems/recovery.md)
+*   📋 **[Operasyonel Kontrol Listeleri](docs/operations/)**
+*   📊 **[Geçmiş Raporlar & Analizler](geçmis_raporlar/)**
 
 ---
 
-## 📂 Dokümantasyon Yapısı
+## 🌟 Katkıda Bulunma ve İletişim
 
-Tüm teknik ve idari belgeler standartlara uygun olarak düzenlenmiştir:
-
-```plaintext
-├── 📂 assets              # Görseller, bannerlar ve logolar
-├── 📂 docs                # 🧠 Tüm teknik dokümanlar
-├── 📂 geçmis_raporlar     # 📚 Analiz edilen eski raporlar
-├── 📂 logs                # 📡 Telemetri ve uçuş logları
-├── 📜 CITATION.cff        # Akademik atıf dosyası
-├── 📜 SECURITY.md         # Güvenlik politikası
-└── 📜 README.md           # Ana proje dosyası
-```
-
-### 📋 Operasyonlar (Safety First)
-*   [🚀 Fırlatma Günü Prosedürleri (Launch Day)](docs/operations/checklist_launch.md)
-*   [⚠️ Güvenlik Prosedürleri](docs/operations/safety_procedures.md)
-*   [🛠️ Montaj Kontrol Listesi](docs/operations/checklist_assembly.md)
-
-### 🛠️ Alt Sistemler
-*   [🔥 İtki Sistemi (Propulsion)](docs/subsystems/propulsion.md)
-*   [⚡ Aviyonik & Yazılım](docs/subsystems/avionics.md)
-*   [🏗️ Yapısal & Mekanik](docs/subsystems/structure.md)
-*   [🪂 Kurtarma Sistemi (Recovery)](docs/subsystems/recovery.md)
-*   [📦 Faydalı Yük (Payload)](docs/subsystems/payload.md)
-
-### 📊 Yönetim ve Arşiv
-*   [Bütçe Takibi](docs/management/budget.md)
-*   [Toplantı Tutanağı Şablonu](docs/management/meeting_notes_template.md)
-*   [Geçmiş Raporlar](geçmis_raporlar/)
-
----
-
-## 🤝 Çalışma Prensipleri
-1.  **Disiplin:** Planlı ve programlı ilerleme esastır.
-2.  **Belgeleme:** Yapılan her hesaplama ve araştırma `docs/` altına işlenir.
-3.  **İletişim:** GitHub Issues üzerinden süreç takibi yapılır.
-
----
-
-## 📞 İletişim
-
-*   **Proje Sahibi:** Bahattin Yunus
+Bu proje açık kaynak felsefesini destekler. Önerilerinizi ve katkılarınızı bekliyorum.
 
 <div align="center">
-  <p>© 2026 Bahattin Yunus</p>
+
+[![Email](https://img.shields.io/badge/Email-bahattinyunus%40gmail.com-red?style=for-the-badge&logo=gmail)](mailto:bahattinyunus@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=for-the-badge&logo=github)](https://github.com/bahattinyunus)
+
+</div>
+
+<br>
+
+<div align="center">
+  <p>Made with ❤️ and 🚀 by Bahattin Yunus</p>
+  <p>© 2026 All Rights Reserved</p>
 </div>
